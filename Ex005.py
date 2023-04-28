@@ -1,17 +1,11 @@
-fileName = 'text.txt'
-handlef = open(fileName)
-count = dict()
+myDict = {'a': 1, 'b': 13, 'c': 22}
 
-for line in handlef:
-    words = line.split()    
-    for word in words:
-        count[word] = count.get(word, 0) + 1
+#myList = list()
+#for k, v in myDict.items():
+#    myList.append((v, k))
+#
+#myList = sorted(myList, reverse=True)
+#print(myList)
 
-myList = list()
-for k,v in count.items():
-    myList.append((v,k))
+print(sorted([(v,k) for k,v in myDict.items()], reverse=True))
 
-myList = sorted(myList, reverse=True)
-
-for v,k in myList[:5]:
-    print(k,v)
