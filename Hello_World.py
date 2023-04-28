@@ -1,1 +1,1 @@
-print('hello from a file')
+print('Hello World', 'Hello Python')
