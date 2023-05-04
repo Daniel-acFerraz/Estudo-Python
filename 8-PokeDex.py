@@ -18,7 +18,6 @@ def PokeName():
                     if not name.lower() == pokemon.lower():
                         continue
                     else:
-                        print(myPokeDex[type][pokemon])
                         foundPokemon = dict()
                         print("\n", pokemon.upper())      
                         for attribute in myPokeDex[type][pokemon]:
@@ -32,7 +31,7 @@ def PokeName():
                             print("\nOk, bye")
                             MainMenu()
                     if not name.lower() == pokemon.lower():
-                        name = input("\nPokemon not found! Try again or type 'quit' to exit: ")                        
+                        name = input("\nPokemon not found! Try again or type 'quit' to go to main menu: ")                        
                         if not name == "quit":
                             PokeName()
                         else: 
@@ -40,7 +39,7 @@ def PokeName():
                             MainMenu()
 
         except:
-            name = input("Pokemon not found! Try again or type 'quit' to exit: ")
+            name = input("Pokemon not found! Try again or type 'quit' to go to main menu: ")
             if name == "quit":
                 print("\nOk, bye")
                 MainMenu()
@@ -88,10 +87,14 @@ def FullList():
             pokemon = pokemonLower.upper()
             fullList[pokemon] = fullList.get(pokemon, myPokeDex[type][pokemonLower])
             print(pokemon, " - ", myPokeDex[type][pokemonLower]["type"])
-    name = input("\nType pokemon's name to see its stats: ")
+    name = input("\nType pokemon's name to see its stats or 'quit' to go to main menu: ")
     name = name.upper()
-    print(name)
-    PokeName()
+    if name.lower() == "quit":
+        print("\nOk, bye")
+        MainMenu()
+    else:
+        PokeName()
+
 
 def MainMenu():
     global name
@@ -116,4 +119,4 @@ def MainMenu():
         MainMenu()
         
 
-PokeName()
+MainMenu()
