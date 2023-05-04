@@ -6,21 +6,21 @@ data = '''
         {
             "type": "Fire and Flying",
             "level": "82",
-            "IVs": 38,
+            "IVs": 31,
             "Nature": "Brave"
         },
         "Magma":
         {
             "type": "Fire and Rock",
             "level": "79",
-            "IVs": 35,
+            "IVs": 29,
             "Nature": "Bold"
         },
-        "Flareon":
+        "Arcanine":
         {
             "type": "Fire",
             "level": "85",
-            "IVs": 36,
+            "IVs": 30,
             "Nature": "Docile"
         }
     },
@@ -30,21 +30,21 @@ data = '''
         {
             "type": "Water",
             "level": "80",
-            "IVs": 40,
+            "IVs": 31,
             "Nature": "Calm"
         },
         "Lapras":
         {
             "type": "Water and Ice",
             "level": "83",
-            "IVs": 37,
+            "IVs": 30,
             "Nature": "Gentle"
         },
         "Golduck":
         {
             "type": "Water and Psychic",
             "level": "81",
-            "IVs": 38,
+            "IVs": 28,
             "Nature": "Hasty"
         }
     },
@@ -54,21 +54,21 @@ data = '''
         {
             "type": "Grass and Poison",
             "level": "85",
-            "IVs": 36,
+            "IVs": 30,
             "Nature": "Serious"
         },
         "Victreebel":
         {
             "type": "Grass and Psychic",
             "level": "77",
-            "IVs": 36,
+            "IVs": 27,
             "Nature": "Brave"
         },
         "Tangela":
         {
             "type": "Grass",
             "level": "74",
-            "IVs": 40,
+            "IVs": 31,
             "Nature": "Gentle"
         }
     },
@@ -78,21 +78,21 @@ data = '''
         {
             "type": "Electric",
             "level": "88",
-            "IVs": 39,
+            "IVs": 31,
             "Nature": "Timid"
         },
         "Jolteon":
         {
             "type": "Electric",
             "level": "6",
-            "IVs": 37,
+            "IVs": 29,
             "Nature": "Hasty"
         },
         "Zapdos":
         {
             "type": "Electric and Flying",
             "level": "90",
-            "IVs": 38,
+            "IVs": 30,
             "Nature": "Naive"
         }
     }
