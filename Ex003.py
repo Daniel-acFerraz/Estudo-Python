@@ -1,5 +1,5 @@
 from StudentConstructor import Student
-from ForeignStudentC import ForeignStudent
+from ForeignStudent import ForeignStudent
 
 mike = Student("Mike Dane", "TI", 4.9, True)
 ana = Student("Ana Maria", "HR", 3.1, False)

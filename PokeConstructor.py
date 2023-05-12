@@ -1,7 +1,6 @@
 class Pokemon:
-    def __init__(self, name, type, level, IVs, nature):
+    def __init__(self, name, type):
         self.name = name
         self.type = type
-        self.level = level
-        self.IVs = IVs
-        self.Nature = nature
+        
+       

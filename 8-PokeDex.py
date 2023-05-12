@@ -1,9 +1,53 @@
 from PokeInfo import *
 import json
+from PokeConstructor import Pokemon
+import random
+import re
 
 myPokeDex = json.loads(data)
 name = None
 type = None
+
+natures = ['Hardy', 'Bold', 'Modest', 'Calm', 'Timid', 'Lonely', 'Docile', 'Mild', 'Gentle', 'Hasty', 'Adamant', 'Impish', 'Bashful', 'Careful', 'Jolly', 'Naive', 'Brave', 'Relaxed', 'Quiet', 'Sassy', 'Serious']
+
+def PokeInclude():
+    newPokemon = Pokemon(input("Type the name of the pokemon would you like to register: ").capitalize(), input("Whats the type of this pokemon? ").capitalize())
+    newPoke = dict()
+    newPoke["type"] = newPokemon.type
+    newPoke["level"] = random.randrange(40, 99)
+    newPoke["IVs"] = random.randrange(8, 31)
+    newPoke["Nature"] = random.choice(natures)   
+    myPokeDex['FIRE'][newPokemon.name] = newPoke
+
+    if re.search("fire", newPoke["type"].lower()):
+        myPokeDex['FIRE'][newPokemon.name] = newPoke
+        print("\nPokemon successfuly included in our system!\n")
+    elif re.search("water", newPoke["type"].lower()):
+        myPokeDex['WATER'][newPokemon.name] = newPoke
+        print("\nPokemon successfuly included in our system!\n")
+    elif re.search("grass", newPoke["type"].lower()):
+        myPokeDex['GRASS'][newPokemon.name] = newPoke
+        print("\nPokemon successfuly included in our system!\n")
+    elif re.search("electric", newPoke["type"].lower()):
+        myPokeDex['ELECTRIC'][newPokemon.name] = newPoke
+        print("\nPokemon successfuly included in our system!\n")
+    else:
+        print("\nSorry, we're still not working with Pokemons os such type!")
+    #with open('PokeInfo.py', 'a') as pokeData:
+    #    pokeData.write(str(newPoke))
+    print(newPokemon.name, newPoke)
+    action = input("\nPress 'Enter' to add another pokemon or 'quit' to go to main menu: ")                        
+    if action == "quit":
+        MainMenu()
+    elif action == "":
+        PokeInclude()
+    else:
+        print("Invalid command, back to main menu")
+        MainMenu()
+
+
+
+
 
 def PokeName():
     global name
@@ -24,7 +68,7 @@ def PokeName():
                             foundPokemon[attribute] = myPokeDex[type][pokemon][attribute]
                             print(attribute.capitalize(), ": ", foundPokemon[attribute])
 
-                        name = input("\nSearch for another pokemon or type 'quit' to exit: ")                        
+                        name = input("\nSearch for another pokemon or type 'quit' to go to main menu: ")                        
                         if not name == "quit":
                             PokeName()
                         else: 
@@ -50,7 +94,7 @@ def PokeName():
 def PokeType():
     global type
     if type == None:
-        type = input("\nWhich type of pokemon do you want to buy today?:  ")
+        type = input("\nWhich type of pokemon are you looking for today?:  ")
         type = type.upper()   
     try:
         n = 1
@@ -59,7 +103,7 @@ def PokeType():
             print(n, " - ",pokemon)
             n+=1
         
-        checkAnswer1 = input("\nWanna check out the status of any of these?\n(Type pokemon's name to check its stats or 'quit' to exit):  ")
+        checkAnswer1 = input("\nWanna check out the status of any of these?\n(Type pokemon's name to check its stats or 'quit' to go to main menu):  ")
         if checkAnswer1.lower() == "quit":
             return print("\nOk, bye")
         else:
@@ -103,7 +147,7 @@ def MainMenu():
     try:
         int(action)
         if action == "1": 
-            print("nice!")
+            PokeInclude()
         elif(action == "2"): 
             PokeName()
         elif(action == "3"):
@@ -118,5 +162,4 @@ def MainMenu():
         print("\nNot a valid option\n")
         MainMenu()
         
-
 MainMenu()

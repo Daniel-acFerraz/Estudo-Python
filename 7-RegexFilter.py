@@ -1,5 +1,5 @@
 import re
-handlef = open('text.txt')
+handlef = open('Text.txt')
 numList = list()
 #for line in handlef:
 #    line = line.rstrip()
